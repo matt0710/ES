@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class Main {
     public static void main (String[] args){
 
-        Utente matteo = new Utente("matteo", "attimonelli","m@mail.it");
-        Utente olimpia = new Utente("olimpia", "cic","o@mail.it");
-        Utente pasquale = new Utente("pasquale", "attimonelli","p@mail.it");
+        Utente m = new Utente("m", "a","m@mail.it");
+        Utente o = new Utente("o", "c","o@mail.it");
+        Utente p = new Utente("p", "a","p@mail.it");
 
         Post post1 = new Post("post1", "01/01/01");
         Post post2 = new Post("post2", "02/02/02");
@@ -22,23 +22,23 @@ public class Main {
         LinkedList<Post> lista1 = new LinkedList<>();
 
         try {
-            facebook.signIn(matteo);
-            facebook.pubblica(matteo.getMail(), post1);
+            facebook.signIn(m);
+            facebook.pubblica(m.getMail(), post1);
             //System.out.println(facebook);
-            facebook.pubblica(matteo.getMail(), post2);
+            facebook.pubblica(m.getMail(), post2);
             System.out.println(facebook);
             System.out.println("______________________________________");
 
-            //facebook.pubblica(olimpia.getMail(), post1);
-            facebook.signIn(olimpia);
-            facebook.pubblica(olimpia.getMail(), post3);
+            //facebook.pubblica(o.getMail(), post1);
+            facebook.signIn(o);
+            facebook.pubblica(o.getMail(), post3);
 
             System.out.println(facebook);
 
-            facebook.rimuovi(olimpia.getMail(), post3);
+            facebook.rimuovi(o.getMail(), post3);
 
-            //facebook.rimuovi(olimpia.getMail(), post3);
-            //facebook.rimuovi(pasquale.getMail(), post3);
+            //facebook.rimuovi(o.getMail(), post3);
+            //facebook.rimuovi(p.getMail(), post3);
 
         }catch (AlreadySignedInException asie){
             //System.out.println("ssss");
